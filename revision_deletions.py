@@ -19,7 +19,7 @@ from revision_history import RevisionHistory
 from string import punctuation
 
 
-class RevisionDiff(RevisionHistory):
+class RevisionDeletions(RevisionHistory):
     """
     A subclass of RevisionHistory that only covers deleted parts of a Wikipedia
     article's revision histroy
@@ -43,5 +43,5 @@ class RevisionDiff(RevisionHistory):
 
 
 if __name__ == '__main__':
-    RD = RevisionDiff('is', 'Reddit')
+    RD = RevisionDeletions('is', 'Reddit')
     print([w for w in RD.get_deletions()])
