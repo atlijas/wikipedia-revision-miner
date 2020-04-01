@@ -8,14 +8,14 @@ import re
 from itertools import chain
 from difflib import SequenceMatcher
 import warnings
+from string import punctuation
 from bs4 import BeautifulSoup
 from mwclient import Site
 import requests
 # NLTK needs to do some upgrading. Ignore for now.
 warnings.filterwarnings(action='ignore', category=DeprecationWarning)
-from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.tokenize import sent_tokenize
 from rev_regex import revision_regex
-from string import punctuation
 
 
 
@@ -63,7 +63,7 @@ class RevisionHistory:
                     if curr_score > best_match_score:
                         best_match_score = curr_score
                         best_match = sent2
-                if sent != best_match and best_match_score > 0.5:
+                if sent != best_match and best_match_score > 0.7:
                     yield sent, best_match, best_match_score
                 else:
                     pass

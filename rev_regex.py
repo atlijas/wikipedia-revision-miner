@@ -13,10 +13,9 @@ revision_patterns = [
                     r'<ref.*?\/ref>',
                     r'ref.*?\/ref',
                     r'>.*?',
-                    r'>{{.*'
-                    r'>.*?<'
-                    #r'[0-9].*?\|',
-                    #'>{{cite.*?\/ref>',
-                    #r'Frá title=.*?/ref>',
+                    r'>{{.*',
+                    r'>.*?<',
+                    r'Flokkur:.*?',
+                    r'Mynd:.*?',
                     ]
 revision_regex = re.compile('|'.join([r for r in revision_patterns]))
