@@ -1,4 +1,7 @@
-# wikipedia-revision-miner
+# WikipediaRevisionMiner
+
+WikipediaRevisionMiner (WRM) is a toolkit used for mining Wikipedia articles'
+revision history.
 
 ### Basic usage
 
