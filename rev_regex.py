@@ -16,6 +16,9 @@ revision_patterns = [
                     r'>{{.*',
                     r'>.*?<',
                     r'Flokkur:.*?',
+                    r'flokkur:.*?',
                     r'Mynd:.*?',
+                    r'<div.*?'
+                    r'<br.*?',
                     ]
 revision_regex = re.compile('|'.join([r for r in revision_patterns]))
