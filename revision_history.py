@@ -40,10 +40,10 @@ class RevisionHistory:
         """
         url = f'https://{self.language}.wikipedia.org/w/index.php?title=\
         {self.wiki_page}&type=revision&diff={self.newest}&oldid={self.oldest}'
-        page = requests.get(url, "html.parser")
-        soup = BeautifulSoup(page.content, "html.parser")
-        unrevised_divs = soup.find_all("td", attrs={"class": "diff-deletedline"})
-        revised_divs = soup.find_all("td", attrs={"class": "diff-addedline"})
+        page = requests.get(url, 'html.parser')
+        soup = BeautifulSoup(page.content, 'html.parser')
+        unrevised_divs = soup.find_all('td', attrs={'class': 'diff-deletedline'})
+        revised_divs = soup.find_all('td', attrs={'class': 'diff-addedline'})
         if all(lst != [] for lst in [unrevised_divs, revised_divs]):
             yield list(chain(*self.formatted(revised_divs))), \
                   list(chain(*self.formatted(unrevised_divs)))

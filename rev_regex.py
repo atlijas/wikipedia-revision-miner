@@ -20,5 +20,8 @@ revision_patterns = [
                     r'Mynd:.*?',
                     r'<div.*?'
                     r'<br.*?',
+                    r':[0-9]{1,}.*?'
+                    r'[a-zA-Z]{2}:.*?'
+                    r'•.*?'
                     ]
 revision_regex = re.compile('|'.join([r for r in revision_patterns]))
