@@ -54,6 +54,7 @@ class RevisionHistory:
         Compares revised/unrevised sentences and returns the most similar
         ones as sentence pairs
         """
+        to_ignore = [' *', '*', '#', ' #', '|', ' |']
         for revised_gen, unrevised_gen in self.get_revision_divs():
             for sent in revised_gen:
                 best_match = None
@@ -63,10 +64,12 @@ class RevisionHistory:
                     if curr_score > best_match_score:
                         best_match_score = curr_score
                         best_match = sent2
-                if sent != best_match and best_match_score > 0.7:
-                    yield sent, best_match, best_match_score
-                else:
-                    pass
+                if not sent.startswith((' *', '*', '#', ' #', '|', ' |')):
+                    if len(sent.split()) > 5:
+                        if sent != best_match and 0.75 < best_match_score < 0.99:
+                            yield sent, best_match, best_match_score
+                        else:
+                            pass
 
     def formatted(self, div):
         """

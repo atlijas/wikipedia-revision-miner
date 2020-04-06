@@ -1,4 +1,4 @@
-# WikipediaRevisionMiner
+# Wikipedia Revision Miner
 
 WikipediaRevisionMiner (WRM) is a toolkit used for mining Wikipedia articles'
 revision history. Additional regular expressions to [rev_regex.py](rev_regex.py) are needed
