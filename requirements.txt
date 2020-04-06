@@ -1,0 +1,4 @@
+requests==2.21.0
+mwclient==0.10.0
+nltk==3.4.5
+beautifulsoup4==4.9.0
