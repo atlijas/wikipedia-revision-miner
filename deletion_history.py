@@ -4,17 +4,12 @@ Contact: Atli Jasonarson (atlijas)
 Email: atj9@hi.is
 """
 
-import re
 from itertools import chain
-from difflib import SequenceMatcher
 import warnings
 from bs4 import BeautifulSoup
-from mwclient import Site
 import requests
 # NLTK needs to do some upgrading. Ignore for now.
 warnings.filterwarnings(action='ignore', category=DeprecationWarning)
-from nltk.tokenize import sent_tokenize
-from rev_regex import revision_regex
 from revision_history import RevisionHistory
 from string import punctuation
 
